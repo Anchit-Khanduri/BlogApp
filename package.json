@@ -1,9 +1,10 @@
 {
   "name": "blogapp",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app"
+    "start": "node index.js",
+    "build": "npm install"
   },
   "author": "",
   "license": "ISC",
