@@ -5,8 +5,10 @@ const app = express();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files
+app.use(express.static(path.join(__dirname, "./public", "../public")));
+// app.use(express.static('public')); // Serve static files
 app.set('view engine', 'ejs'); // Set EJS as template engine
+app.set("views", path.join(__dirname, "./views", "../views"));
 
 // In-memory data store (for simplicity)
 const posts = [];
@@ -40,3 +42,6 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
+module.exports = app;
